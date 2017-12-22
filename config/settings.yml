@@ -1,12 +1,18 @@
 defaults: &defaults
   app:
+    assets:
+      serve_static_files: <%= ENV['SERVE_STATIC_FILES'] %>
+      version: <%= ENV['ASSETS_VERSION'] || '0.0.1' %>
     fqdn: <%= ENV['RAILS_APP_FQDN'] || 'app.example.com' %>
     force_ssl: <%= ENV['RAILS_APP_FORCE_SSL'] %>
     name: <%= ENV['RAILS_APP_NAME'] || 'ExampleApp' %>
     log_to_stdout: <%= ENV['LOG_TO_STDOUT'] %>
-  assets:
-    serve_static_files: <%= ENV['SERVE_STATIC_FILES'] %>
-    version: <%= ENV['ASSETS_VERSION'] || '0.0.1' %>
+  database_url: <%= ENV['DATABASE_URL'] %>
+  db:
+    reaping_frequency: <%= (ENV['DB_REAPING_FREQUENCY_SECONDS'] || 60).to_i %>
+    pool_size: <%= (ENV['DB_POOL_SIZE'] || 25).to_i %>
+    timeout: <%= (ENV['DB_TIMEOUT_SECONDS'] || 5).to_i %>
+    encoding: <%= (ENV['DB_ENCODING'] || 'utf8') %>
   secret_token: <%= ENV['SECRET_TOKEN'] %>
 
 development:

@@ -5,12 +5,18 @@
 # entire section, so all of sentry in this example.
 
 development: &development
-  assets:
-    serve_static_files: true
+  app:
+    assets:
+      serve_static_files: true
+  database_url: postgresql://rails5example_dev:rails5example_example_dev@localhost:5432/rails5example?timeout=5000
+  db:
+    pool_size: 50
   secret_token: asdf1234
 
 test:
   <<: *development
+  database_url: postgresql://rails5example_test:rails5example_test@localhost:5432/rails5example_test?timeout=5000
+
 
 # The following sections are here for when you must run in production or staging mode in order to reproduce a problem
 # that is not reproducible in development.
