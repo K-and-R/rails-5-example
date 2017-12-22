@@ -1,0 +1,22 @@
+# Use settings.local.yml to store settings for your development environment.
+# This is an alternative to setting these in environment variables that are loaded by settings.yml
+
+# If there's a section whose items you're not going to populate, such as sentry.dsn, you must remove the
+# entire section, so all of sentry in this example.
+
+development: &development
+  assets:
+    serve_static_files: true
+  secret_token: asdf1234
+
+test:
+  <<: *development
+
+# The following sections are here for when you must run in production or staging mode in order to reproduce a problem
+# that is not reproducible in development.
+
+# production:
+#   <<: *development
+
+# staging:
+#   <<: *development
