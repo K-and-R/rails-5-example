@@ -20,6 +20,8 @@ defaults: &defaults
     timeout: <%= (ENV['DB_TIMEOUT_SECONDS'] || 5).to_i %>
     encoding: <%= (ENV['DB_ENCODING'] || 'utf8') %>
   secret_token: <%= ENV['SECRET_TOKEN'] %>
+  slim_templating:
+    pretty_html_formatting: <%= ENV['SLIM_PRETTY_HTML'] %>
 
 development:
   <<: *defaults
