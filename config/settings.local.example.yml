@@ -11,6 +11,9 @@ development: &development
     consider_requests_local: true
     fqdn: rails-5-example.dev
     force_ssl: false
+  better_errors:
+    editor: sublime
+    trusted_ip: 192.168.0.0/16 127.0.0.0/8
   #leave cookie domain blank when we might be accessing the same config via different domains (rails-5-example.dev and rails-5-example.local)
   cookie_domain: rails-5-example.dev
   database_url: postgresql://rails5example_dev:rails5example_dev@localhost:5432/rails5example_dev?timeout=5000
