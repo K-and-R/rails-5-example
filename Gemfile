@@ -64,12 +64,46 @@ gem 'validation_skipper', github: 'karlwilbur/validation_skipper', :require => '
 # Postmark email service
 gem 'postmark-rails'
 
+group :test do
+  # Browser testing
+  gem 'capybara-email'
+  gem 'capybara-screenshot'
+  gem 'poltergeist'
+
+  # Open browser on failed integration tests
+  gem 'launchy'
+
+  # Run RSpec on file changes
+  gem 'guard-rspec'
+
+  # Clean DB for each test
+  gem 'database_cleaner'
+
+  # Provide an easier syntax for unit tests
+  gem 'shoulda-matchers'
+  gem 'cucumber-rails', require: false
+
+  # Code test coverage reporting
+  gem 'simplecov', require: false
+  gem 'codeclimate-test-reporter', require: false
+end
+
 group :development, :test do
   # Dynamic app benchmarking
   gem 'derailed', require: false
 
   # Factory generator
   gem 'factory_girl_rails', require: false
+
+  # A gem providing "time travel" and "time freezing" capabilities.
+  gem 'timecop', require: false
+
+  # Generate placeholder data for factories
+  gem 'faker', require: false
+
+  # RSpec for rails
+  gem 'rspec-rails', require: false
+  gem 'rspec-rerun', require: false
 
   # Email preview
   gem 'letter_opener'
