@@ -1,6 +1,6 @@
 defaults: &defaults
-  app:
-    assets:
+  app: &app_defaults
+    assets: &app_asset_defaults
       serve_static_files: <%= ENV['SERVE_STATIC_FILES'] %>
       version: <%= ENV['ASSETS_VERSION'] || '0.0.1' %>
     consider_requests_local: <%= ENV['CONSIDER_REQUESTS_LOCAL'] %>
@@ -30,6 +30,11 @@ test:
   <<: *defaults
   assets:
     serve_static_files: true
+  app:
+    <<: *app_defaults
+    assets:
+      <<: *app_asset_defaults
+      serve_static_files: true
 
 staging:
   <<: *defaults
