@@ -28,6 +28,7 @@ module ExampleApp
     def name
       Rails.configuration.app.name
     end
+
     host_options = { host: Rails.configuration.app.fqdn }
     config.action_mailer.default_url_options = host_options
     Rails.application.routes.default_url_options.merge!(host_options)

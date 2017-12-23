@@ -3,10 +3,16 @@ defaults: &defaults
     assets:
       serve_static_files: <%= ENV['SERVE_STATIC_FILES'] %>
       version: <%= ENV['ASSETS_VERSION'] || '0.0.1' %>
-    fqdn: <%= ENV['RAILS_APP_FQDN'] || 'app.example.com' %>
+    consider_requests_local: <%= ENV['CONSIDER_REQUESTS_LOCAL'] %>
     force_ssl: <%= ENV['RAILS_APP_FORCE_SSL'] %>
-    name: <%= ENV['RAILS_APP_NAME'] || 'ExampleApp' %>
+    fqdn: <%= ENV['RAILS_APP_FQDN'] || 'app.example.com' %>
+    log_level: <%= ENV['LOG_LEVEL'] || 'info' %>
     log_to_stdout: <%= ENV['LOG_TO_STDOUT'] %>
+    name: <%= ENV['RAILS_APP_NAME'] || 'ExampleApp' %>
+  better_errors:
+    editor: sublime
+    trusted_ip: <%= ENV['TRUSTED_IP'] %>
+  cookie_domain: <%= ENV['COOKIE_DOMAIN'] %>
   database_url: <%= ENV['DATABASE_URL'] %>
   db:
     reaping_frequency: <%= (ENV['DB_REAPING_FREQUENCY_SECONDS'] || 60).to_i %>
