@@ -61,6 +61,9 @@ gem 'email_validator', github: 'karlwilbur/email_validator', :require => 'email_
 # Skip validation option
 gem 'validation_skipper', github: 'karlwilbur/validation_skipper', :require => 'validation_skipper'
 
+# Postmark email service
+gem 'postmark-rails'
+
 group :development, :test do
   # Dynamic app benchmarking
   gem 'derailed', require: false
