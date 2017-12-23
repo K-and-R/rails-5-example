@@ -105,7 +105,8 @@ group :development, :test do
   gem 'faker', require: false
 
   # RSpec for rails
-  gem 'rspec-rails', require: false
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
   gem 'rspec-rerun', require: false
 
   # Email preview
