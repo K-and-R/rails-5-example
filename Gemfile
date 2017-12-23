@@ -16,6 +16,23 @@ gem 'choices'
 # PostgreSQL
 gem 'pg'
 
+# Allow for db:data:dump and db:data:load rake tasks
+gem 'yaml_db', github: 'K-and-R/yaml_db'
+
+# Proper eager loading for ActiveRecord
+gem 'goldiloader'
+
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'# To use ActiveModel has_secure_password
+
+# debugging (should be available in production)
+gem 'better_errors'
+
+# Console (not just developmnet because someitme we need a console in other environments)
+gem 'pry-rails'
+gem 'pry-plus', github: 'K-and-R/pry-plus'
+gem 'awesome_print'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -35,12 +52,42 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # Dynamic app benchmarking
+  gem 'derailed', require: false
+
+  # Factory generator
+  gem 'factory_girl_rails', require: false
+
+  # Email preview
+  gem 'letter_opener'
+
+  # Code formatting/style Checking
+  gem 'scss_lint', github: 'brigade/scss-lint', require: false
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
+  # Generators
+  gem 'nifty-generators'
+
+  # View and CSS updates
+  gem 'rack-livereload'
+  gem 'guard-livereload'
+
+  # UML ERD diagrams
+  gem 'railroady'
+
+  # bullet for performance, checking for n+1 queries
+  gem 'bullet'
+
+  # Interaction with RailsPanel Chrome extension
+  gem 'meta_request'
+
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
