@@ -6,6 +6,14 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Require some initializers that might be needed by other initializers
+# ...in this specific order
+%w(
+  inflections
+).each do |filename|
+  require File.expand_path("../initializers/#{filename}.rb", __FILE__)
+end
+
 module ExampleApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -39,4 +47,12 @@ module ExampleApp
     config.action_mailer.default_url_options = host_options
     Rails.application.routes.default_url_options.merge!(host_options)
   end
+end
+
+# Require some initializers, which are dependant on the Rails.application, that might be needed by other initializers
+# ...in this specific order
+%w(
+  errors
+).each do |filename|
+  require File.expand_path("../initializers/#{filename}.rb", __FILE__)
 end
