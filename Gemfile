@@ -7,7 +7,6 @@ end
 
 ruby File.read(File.expand_path('../.ruby-version', __FILE__), mode: 'rb').chomp
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 
 # Configuration management (settings.yml and settings.local.yml)
@@ -34,22 +33,33 @@ gem 'pry-plus', github: 'K-and-R/pry-plus'
 gem 'awesome_print'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'sass-rails'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier'
+
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder'
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
+# View templating
+gem 'slim-rails'
+
+#  Model form generation
+gem 'simple_form'
+
+# Email validation
+gem 'email_validator', github: 'karlwilbur/email_validator', :require => 'email_validator/strict'
+
+# Skip validation option
+gem 'validation_skipper', github: 'karlwilbur/validation_skipper', :require => 'validation_skipper'
 
 group :development, :test do
   # Dynamic app benchmarking
