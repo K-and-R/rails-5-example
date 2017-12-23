@@ -19,6 +19,14 @@ defaults: &defaults
     pool_size: <%= (ENV['DB_POOL_SIZE'] || 25).to_i %>
     timeout: <%= (ENV['DB_TIMEOUT_SECONDS'] || 5).to_i %>
     encoding: <%= (ENV['DB_ENCODING'] || 'utf8') %>
+  email: &email_defaults
+    delivery_method: <%= ENV['EMAIL_DELIVERY_METHOD'] %>
+    sender_address: <%= ENV['EMAIL_DEFAULT_FROM'] || ENV['EMAIL_FROM_ADDRESS'] || ENV['EMAIL_DEFAULT_SENDER_ADDRESS'] %>
+    sender_name: <%= ENV['EMAIL_DEFAULT_FROM'] || ENV['EMAIL_FROM_NAME'] || ENV['EMAIL_DEFAULT_SENDER_NAME'] %>
+    recipients:
+      support: <%= ENV['EMAIL_RECIPIENTS_SUPPORT'] %>
+  postmark:
+    api_key: <%= ENV['POSTMARK_API_KEY'] %>
   secret_token: <%= ENV['SECRET_TOKEN'] %>
   slim_templating:
     pretty_html_formatting: <%= ENV['SLIM_PRETTY_HTML'] %>
@@ -28,13 +36,14 @@ development:
 
 test:
   <<: *defaults
-  assets:
-    serve_static_files: true
   app:
     <<: *app_defaults
     assets:
       <<: *app_asset_defaults
       serve_static_files: true
+  email:
+    <<: *email_defaults
+    delivery_method: test
 
 staging:
   <<: *defaults

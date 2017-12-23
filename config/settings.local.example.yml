@@ -19,13 +19,22 @@ development: &development
   database_url: postgresql://rails5example_dev:rails5example_dev@localhost:5432/rails5example_dev?timeout=5000
   db:
     pool_size: 50
+  email: &development_email_defaults
+    delivery_method: letter_opener
+    sender_address: app@example.com
+    sender_name: 'ExampleApp'
+    recipients:
+      support: app-support@example.com
   secret_token: asdf1234
   slim_templating:
     pretty_html_formatting: true
 
 test:
-  <<: *development
   database_url: postgresql://rails5example_test:rails5example_test@localhost:5432/rails5example_test?timeout=5000
+  email:
+    <<: *development_email_defaults
+    delivery_method: test
+  secret_token: asdf1234
 
 
 # The following sections are here for when you must run in production or staging mode in order to reproduce a problem

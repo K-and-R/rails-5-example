@@ -29,6 +29,11 @@ module ExampleApp
       Rails.configuration.app.name
     end
 
+    config.action_mailer.delivery_method = (Rails.configuration.email.delivery_method || 'test').to_sym
+    config.action_mailer.default_options = {
+      from: Rails.configuration.email.sender_address
+    }
+
     host_options = { host: Rails.configuration.app.fqdn }
     config.action_mailer.default_url_options = host_options
     Rails.application.routes.default_url_options.merge!(host_options)
