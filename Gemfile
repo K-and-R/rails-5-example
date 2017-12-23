@@ -64,6 +64,9 @@ gem 'validation_skipper', github: 'karlwilbur/validation_skipper', :require => '
 # Postmark email service
 gem 'postmark-rails'
 
+# Authentication
+gem 'devise'
+
 group :test do
   # Browser testing
   gem 'capybara-email'
