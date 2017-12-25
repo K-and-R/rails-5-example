@@ -24,3 +24,6 @@
 
 # Ignore local config files
 /config/settings.local.yml
+
+# Ignore test coverage report
+/coverage/*
