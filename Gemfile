@@ -64,6 +64,10 @@ gem 'validation_skipper', github: 'karlwilbur/validation_skipper', :require => '
 # Postmark email service
 gem 'postmark-rails'
 
+# Application Administration
+gem 'activeadmin', github: 'activeadmin'
+gem 'active_admin_importable', github: 'K-and-R/active_admin_importable'
+
 # Authentication
 gem 'devise'
 
