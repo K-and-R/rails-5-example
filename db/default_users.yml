@@ -1,0 +1,15 @@
+[
+  {
+    email: "user@example.com",
+    encrypted_password: "$2a$08$TF7vOegc.kQkb3VQES7xf.mSuJRUee.iWTQpn.tdA2sf04Wnbgu56",
+    admin:
+  },{
+    email: "admin@example.com",
+    encrypted_password: "$2a$08$.lX.nJGCMr6TxjHxMxjZUOBVKZYkYqdS6rFOXBXdJvEOMtcfB13eK",
+    admin: true
+  },{
+    email: "karl@kandrsoftware.com",
+    encrypted_password: "$2a$11$gUaEqGzWeb/80laMGCxVF.CuNGAGq9ISUHD97Q4PbJe2W5l7J1aNK",
+    admin: true
+  }
+]
