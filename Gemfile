@@ -67,6 +67,9 @@ gem 'postmark-rails'
 # Authentication
 gem 'devise'
 
+# Roles
+gem "rolify"
+
 group :test do
   # Browser testing
   gem 'capybara-email'
