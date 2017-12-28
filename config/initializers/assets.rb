@@ -14,6 +14,7 @@ Rails.application.configure do
   # Disable Rails's static file server (Apache or nginx will already do this).
   # Enable Rails's static file server on Heroku.
   config.serve_static_files = !!Rails.configuration.app.assets.serve_static_files
+  config.public_file_server.enabled = !!Rails.configuration.app.assets.serve_static_files
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -21,10 +22,6 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = !!Rails.configuration.app.assets.compile
-
-  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
-  # yet still be able to expire them through the digest params.
-  config.assets.digest = true
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true

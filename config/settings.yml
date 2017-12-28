@@ -1,6 +1,7 @@
 defaults: &defaults
   app: &app_defaults
     assets: &app_asset_defaults
+      compile: <%= ENV['COMPILE_MISSING_ASSETS_ON_REQUEST'] %>
       serve_static_files: <%= ENV['SERVE_STATIC_FILES'] %>
       version: <%= ENV['ASSETS_VERSION'] || '0.0.1' %>
     consider_requests_local: <%= ENV['CONSIDER_REQUESTS_LOCAL'] %>
