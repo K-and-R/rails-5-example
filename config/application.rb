@@ -10,6 +10,7 @@ Bundler.require(*Rails.groups)
 # ...in this specific order
 %w(
   inflections
+  string
 ).each do |filename|
   require File.expand_path("../initializers/#{filename}.rb", __FILE__)
 end
