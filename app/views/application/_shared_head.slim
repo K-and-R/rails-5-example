@@ -1,0 +1,16 @@
+title == (content_for?(:title) ? (yield(:title) << ' : ') : '' ) << Rails.application.name
+- Rails.logger.warn('No page title set') unless content_for?(:title)
+
+meta charset="utf-8"
+meta name='viewport' content='width=device-width, initial-scale=1.0'
+
+link rel='icon' type='images/x-icon' href="#{asset_path('favicon.ico')}"
+link rel='apple-touch-icon' type='images/x-icon' href="#{asset_path('favicon.ico')}"
+
+= stylesheet_link_tag :application, media: 'all', data: {turbolinks_track: 'reload'}
+
+= javascript_include_tag :application, data: {turbolinks_track: 'reload'}
+
+= csrf_meta_tags
+
+== yield(:head)

@@ -1,0 +1,5 @@
+footer.footer
+  #copyright &copy;#{copyright_year} #{copyright_author}
+  - if content_for?(:footer)
+    .well
+      = yield(:footer)
