@@ -30,6 +30,9 @@ defaults: &defaults
   postmark:
     api_key: <%= ENV['POSTMARK_API_KEY'] %>
   secret_token: <%= ENV['SECRET_TOKEN'] %>
+  sentry:
+    dsn: <%= ENV['SENTRY_DSN'] %>
+    javascript_enabled: <%= ENV['SENTRY_JAVASCRIPT_ENABLED'] || 'false' %>
   slim_templating:
     pretty_html_formatting: <%= ENV['SLIM_PRETTY_HTML'] %>
 
