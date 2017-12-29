@@ -138,6 +138,17 @@ group :development, :test do
   gem 'scss_lint', github: 'brigade/scss-lint', require: false
   gem 'rubocop', require: false
   gem 'rubocop-rspec', require: false
+
+  # Deploy with Capistrano (Required in text environemnt to deploy from CodeShip)
+  gem 'capistrano', '>= 3.1.0', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rbenv', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-passenger', github: 'capistrano/passenger', require: false
+  gem 'capistrano-npm', require: false
+  gem 'capistrano-grunt', github: 'roots/capistrano-grunt', require: false
+  gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq', require: false
+  gem 'capistrano-maintenance', github: "capistrano/maintenance", require: false
 end
 
 group :development do
