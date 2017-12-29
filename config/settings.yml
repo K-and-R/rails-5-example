@@ -21,6 +21,7 @@ defaults: &defaults
     pool_size: <%= (ENV['DB_POOL_SIZE'] || 25).to_i %>
     timeout: <%= (ENV['DB_TIMEOUT_SECONDS'] || 5).to_i %>
     encoding: <%= (ENV['DB_ENCODING'] || 'utf8') %>
+  default_timezone: <%= ENV['DEFAULT_TIMEZONE'] || 'UTC' %>
   email: &email_defaults
     delivery_method: <%= ENV['EMAIL_DELIVERY_METHOD'] %>
     sender_address: <%= ENV['EMAIL_DEFAULT_FROM'] || ENV['EMAIL_FROM_ADDRESS'] || ENV['EMAIL_DEFAULT_SENDER_ADDRESS'] %>
