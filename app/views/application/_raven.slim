@@ -1,0 +1,13 @@
+- if Rails.configuration.sentry.present? && Rails.configuration.sentry.javascript_enabled
+  - if current_user
+    javascript:
+      var currrent_user = {id: '#{current_user.id}', email: '#{current_user.email}'};
+  script src="https://cdn.ravenjs.com/3.20.1/raven.min.js" crossorigin="anonymous"
+  javascript:
+    try {
+      opts = {};
+      Raven.config('#{Rails.configuration.sentry.javascript_dsn}', opts).install();
+      if(current_user) {
+        Raven.setUserContext(current_user);
+      }
+    } catch(e) {}

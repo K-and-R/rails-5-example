@@ -11,6 +11,8 @@ link rel='apple-touch-icon' type='images/x-icon' href="#{asset_path('favicon.ico
 
 = javascript_include_tag :application, data: {turbolinks_track: 'reload'}
 
+= render 'raven'
+
 = csrf_meta_tags
 
 == yield(:head)
