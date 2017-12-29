@@ -40,7 +40,7 @@ defaults: &defaults
   secret_token: <%= ENV['SECRET_TOKEN'] %>
   sentry:
     dsn: <%= ENV['SENTRY_DSN'] %>
-    javascript_enabled: <%= ENV['SENTRY_JAVASCRIPT_ENABLED'] || 'false' %>
+    javascript_enabled: <%= ENV['SENTRY_JAVASCRIPT_ENABLED'] %>
   sidekiq:
     web:
       mount_point: <%= ENV['SIDEKIQ_WEB_MOUNT_POINT'] || "/sidekiq" %>
