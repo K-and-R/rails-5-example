@@ -49,6 +49,13 @@ GIT
       sass (~> 3.5.3)
 
 GIT
+  remote: https://github.com/getsentry/raven-ruby.git
+  revision: 99199d4eb7c274bf4754c6501cadce2d2b06a659
+  specs:
+    sentry-raven (2.7.1)
+      faraday (>= 0.7.6, < 1.0)
+
+GIT
   remote: https://github.com/karlwilbur/email_validator.git
   revision: e25c9e750aaa8a8a532f0c950aa193196c9eb338
   specs:
@@ -218,6 +225,8 @@ GEM
       railties (>= 3.0.0)
     faker (1.8.7)
       i18n (>= 0.7)
+    faraday (0.13.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
     formatador (0.2.5)
     formtastic (3.1.5)
@@ -313,6 +322,7 @@ GEM
     minitest (5.10.3)
     multi_json (1.12.2)
     multi_test (0.1.2)
+    multipart-post (2.0.0)
     nenv (0.3.0)
     nifty-generators (0.4.6)
     nio4r (2.1.0)
@@ -566,6 +576,7 @@ DEPENDENCIES
   rubocop-rspec
   sass-rails
   scss_lint!
+  sentry-raven!
   shoulda-matchers
   simple_form
   simplecov

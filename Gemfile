@@ -55,6 +55,9 @@ gem 'slim-rails'
 #  Model form generation
 gem 'simple_form'
 
+# Error reporting
+gem 'sentry-raven', github: 'getsentry/raven-ruby'
+
 # Email validation
 gem 'email_validator', github: 'karlwilbur/email_validator', :require => 'email_validator/strict'
 
