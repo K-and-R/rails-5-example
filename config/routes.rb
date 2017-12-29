@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   get '/welcome', to: 'website#welcome'
   get '/about', to: 'website#about'
@@ -7,6 +9,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root to: redirect('/welcome')
+
+  mount Sidekiq::Web, at: Rails.configuration.sidekiq.web.mount_point
+  mount RedisBrowser::Web, at: Rails.configuration.redis_browser.web.mount_point
 
   # Redirect to custom error pages
   get "/404", :to => "errors#not_found"

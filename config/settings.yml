@@ -30,10 +30,24 @@ defaults: &defaults
       support: <%= ENV['EMAIL_RECIPIENTS_SUPPORT'] %>
   postmark:
     api_key: <%= ENV['POSTMARK_API_KEY'] %>
+  redis:
+    url: <%= ENV['REDIS_URL'] || 'redis://127.0.0.1:6379/0' %>
+  redis_browser:
+    web:
+      mount_point: <%= ENV['REDIS_BROWSER_WEB_MOUNT_POINT'] || "/redis-browser" %>
+      username: <%= ENV['REDIS_BROWSER_WEB_USERNAME'] || 'admin'  %>
+      password: <%= ENV['REDIS_BROWSER_WEB_PASSWORD'] || 'password'  %>
   secret_token: <%= ENV['SECRET_TOKEN'] %>
   sentry:
     dsn: <%= ENV['SENTRY_DSN'] %>
     javascript_enabled: <%= ENV['SENTRY_JAVASCRIPT_ENABLED'] || 'false' %>
+  sidekiq:
+    web:
+      mount_point: <%= ENV['SIDEKIQ_WEB_MOUNT_POINT'] || "/sidekiq" %>
+      username: <%= ENV['SIDEKIQ_WEB_USERNAME'] || 'admin'  %>
+      password: <%= ENV['SIDEKIQ_WEB_PASSWORD'] || 'password'  %>
+    redis:
+      url: <%= ENV['SIDEKIQ_REDIS_URL'] %>
   slim_templating:
     pretty_html_formatting: <%= ENV['SLIM_PRETTY_HTML'] %>
 
