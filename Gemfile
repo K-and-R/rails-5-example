@@ -12,6 +12,12 @@ gem 'rails', '~> 5.1.4'
 # Configuration management (settings.yml and settings.local.yml)
 gem 'choices'
 
+# Redis adapter (for Action Cable and Sidekiq)
+gem 'redis'
+gem 'redis-rails'
+gem 'redis-namespace'
+gem 'redis-browser'
+
 # PostgreSQL
 gem 'pg'
 
@@ -67,6 +73,11 @@ gem 'validation_skipper', github: 'karlwilbur/validation_skipper', :require => '
 # Postmark email service
 gem 'postmark-rails'
 
+# Background job queue (uses Redis)
+# gem 'sinatra', github: 'sinatra/sinatra', require: false # for Sidekiq web
+gem 'sinatra'
+gem 'sidekiq'
+
 # Application Administration
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_admin_importable', github: 'K-and-R/active_admin_importable'
@@ -118,6 +129,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rails-controller-testing'
   gem 'rspec-rerun', require: false
+  gem 'rspec-sidekiq', require: false
 
   # Email preview
   gem 'letter_opener'
