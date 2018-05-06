@@ -47,6 +47,11 @@ module ExampleApp
     host_options = { host: Rails.configuration.app.fqdn }
     config.action_mailer.default_url_options = host_options
     Rails.application.routes.default_url_options.merge!(host_options)
+
+    # # Use MongoDB rather than PostgreSQL
+    # config.generators do |g|
+    #   g.orm :mongoid
+    # end
   end
 end
 

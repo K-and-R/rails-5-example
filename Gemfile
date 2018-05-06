@@ -20,6 +20,7 @@ gem 'redis-browser'
 
 # PostgreSQL
 gem 'pg'
+gem 'mongoid'
 
 # Allow for db:data:dump and db:data:load rake tasks
 gem 'yaml_db', github: 'K-and-R/yaml_db'
@@ -161,9 +162,6 @@ group :development do
 
   # UML ERD diagrams
   gem 'railroady'
-
-  # bullet for performance, checking for n+1 queries
-  gem 'bullet'
 
   # Interaction with RailsPanel Chrome extension
   gem 'meta_request'
